@@ -6,8 +6,11 @@ function DoctorList({ doctors }) {
     return <Typography>No doctors available.</Typography>;
   }
 
-  const renderDoctorList = () => {
-    return (
+  return (
+    <Paper elevation={3} sx={{ padding: 3, marginTop: 3 }}>
+      <Typography variant="h5" gutterBottom>
+        Our Doctors
+      </Typography>
       <Grid container spacing={2}>
         {doctors.map((doctor, index) => (
           <Grid item xs={12} sm={6} key={index}>
@@ -21,15 +24,6 @@ function DoctorList({ doctors }) {
           </Grid>
         ))}
       </Grid>
-    );
-  };
-
-  return (
-    <Paper elevation={3} sx={{ padding: 3, marginTop: 3 }}>
-      <Typography variant="h5" gutterBottom>
-        Doctors
-      </Typography>
-      {renderDoctorList()}
     </Paper>
   );
 }
