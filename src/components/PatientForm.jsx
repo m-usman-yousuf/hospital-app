@@ -81,9 +81,9 @@ function PatientForm({ config }) {
     if (!stepConfig) return null;
 
     return (
-      <Grid container spacing={2} sx={{ marginTop: 2 }}>
+      <Grid container spacing={config.spacing || 2} sx={{ marginTop: 2 }}>
         {stepConfig.fields.map((field) => (
-          <Grid item xs={12} key={field.name}>
+          <Grid item xs={config.xs || 12} key={field.name}>
             {renderField(field)}
           </Grid>
         ))}
